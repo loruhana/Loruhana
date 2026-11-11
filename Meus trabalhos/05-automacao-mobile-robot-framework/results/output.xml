@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.4 on win32)" generated="2025-02-06T20:50:37.277170" rpa="false" schemaversion="5">
+<suite id="s1" name="To Do" source="C:\Users\dh18j\Desktop\To Do">
+<suite id="s1-s1" name="Actions" source="C:\Users\dh18j\Desktop\To Do\Actions.robot">
+<test id="s1-s1-t1" name="Abrir App" line="10">
+<kw name="Abrir App" owner="Base">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://localhost:4723</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=moto g(8) play</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2025-02-06T20:50:37.491356" elapsed="7.845793"/>
+</kw>
+<status status="PASS" start="2025-02-06T20:50:37.490355" elapsed="7.846794"/>
+</kw>
+<kw name="Nova tarefa" owner="NewTask_Keywords">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-02-06T20:50:45.339251" level="INFO">Clicking element 'android=new UiSelector().description("To Do")'.</msg>
+<arg>${Abri_To_do}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-02-06T20:50:45.338157" elapsed="1.057866"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-02-06T20:50:49.817247" level="INFO">xpath criteria: (//android.view.View[@resource-id="com.microsoft.todos:id/name_background"])[1]</msg>
+<arg>${Meu_dia}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-02-06T20:50:46.396023" elapsed="3.422236"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-02-06T20:50:49.821298" level="INFO">Clicking element 'xpath=(//android.view.View[@resource-id="com.microsoft.todos:id/name_background"])[1]'.</msg>
+<msg time="2025-02-06T20:50:50.998536" level="INFO">xpath criteria: (//android.view.View[@resource-id="com.microsoft.todos:id/name_background"])[1]</msg>
+<arg>${Meu_dia}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-02-06T20:50:49.819236" elapsed="1.179300"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-02-06T20:50:51.002454" level="INFO">Clicking element 'accessibility_id=Adicionar uma tarefa'.</msg>
+<arg>${Add tarefa}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-02-06T20:50:50.998536" elapsed="0.304233"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-02-06T20:50:51.303851" level="INFO">Typing text 'Teste técnico' into text field 'xpath=//android.widget.EditText[@resource-id="com.microsoft.todos:id/create_task_edit_text"]'</msg>
+<msg time="2025-02-06T20:50:53.459889" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="com.microsoft.todos:id/create_task_edit_text"]</msg>
+<arg>${Campo tarefa}</arg>
+<arg>Teste técnico</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-02-06T20:50:51.302769" elapsed="2.157120"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-02-06T20:50:53.461877" level="INFO">Clicking element 'xpath=//android.widget.TextView[@resource-id="com.microsoft.todos:id/chip_title_view" and @text="Definir data de conclusão"]'.</msg>
+<msg time="2025-02-06T20:50:54.645027" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.microsoft.todos:id/chip_title_view" and @text="Definir data de conclusão"]</msg>
+<arg>${Data de conclusão}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-02-06T20:50:53.459889" elapsed="1.185138"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-02-06T20:50:55.539940" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.microsoft.todos:id/title" and @text="Escolher uma data"]
+xpath criteria: //android.widget.TextView[@resource-id="com.microsoft.todos:id/title" and @text="Escolher uma data"]</msg>
+<arg>${Wait escolher data}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-02-06T20:50:54.645027" elapsed="0.894913"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-02-06T20:50:55.541893" level="INFO">Clicking element 'xpath=//android.widget.TextView[@resource-id="com.microsoft.todos:id/title" and @text="Escolher uma data"]'.</msg>
+<msg time="2025-02-06T20:50:56.542596" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.microsoft.todos:id/title" and @text="Escolher uma data"]</msg>
+<arg>${Escolher data}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-02-06T20:50:55.539940" elapsed="1.002656"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-02-06T20:50:56.544569" level="INFO">Clicking element 'xpath=//android.widget.Button[@resource-id="android:id/button1"]'.</msg>
+<msg time="2025-02-06T20:50:56.888825" level="INFO">xpath criteria: //android.widget.Button[@resource-id="android:id/button1"]</msg>
+<arg>${Confirmar data}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-02-06T20:50:56.542596" elapsed="0.346229"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-02-06T20:50:56.890795" level="INFO">Clicking element 'xpath=//android.widget.ImageView[@content-desc="Adicionar uma tarefa"]'.</msg>
+<msg time="2025-02-06T20:50:57.616903" level="INFO">xpath criteria: //android.widget.ImageView[@content-desc="Adicionar uma tarefa"]</msg>
+<arg>${Cria tarefa}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-02-06T20:50:56.889796" elapsed="0.729100"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-02-06T20:50:57.620908" level="INFO">Clicking element 'xpath=//android.widget.ImageButton[@content-desc="Voltar"]'.</msg>
+<msg time="2025-02-06T20:50:59.934981" level="INFO">xpath criteria: //android.widget.ImageButton[@content-desc="Voltar"]</msg>
+<arg>${Click tela}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-02-06T20:50:57.618896" elapsed="2.317081"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-02-06T20:50:59.939520" level="INFO">Clicking element 'xpath=//android.widget.ImageButton[@content-desc="Voltar"]'.</msg>
+<msg time="2025-02-06T20:51:00.481547" level="INFO">xpath criteria: //android.widget.ImageButton[@content-desc="Voltar"]</msg>
+<arg>${Voltar para home}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-02-06T20:50:59.935977" elapsed="0.545570"/>
+</kw>
+<status status="PASS" start="2025-02-06T20:50:45.338157" elapsed="15.143390"/>
+</kw>
+<kw name="Validar tarefa" owner="Validate_Task">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-02-06T20:51:02.030383" level="INFO">xpath criteria: (//android.view.View[@resource-id="com.microsoft.todos:id/name_background"])[1]</msg>
+<arg>${Meu_dia}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-02-06T20:51:00.482483" elapsed="1.547900"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-02-06T20:51:02.032346" level="INFO">Clicking element 'xpath=(//android.view.View[@resource-id="com.microsoft.todos:id/name_background"])[1]'.</msg>
+<msg time="2025-02-06T20:51:02.345714" level="INFO">xpath criteria: (//android.view.View[@resource-id="com.microsoft.todos:id/name_background"])[1]</msg>
+<arg>${Meu_dia}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-02-06T20:51:02.030383" elapsed="0.315331"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-02-06T20:51:02.348000" level="INFO">Clicking element 'xpath=//android.widget.TextView[@resource-id="com.microsoft.todos:id/task_title"]'.</msg>
+<msg time="2025-02-06T20:51:03.888745" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.microsoft.todos:id/task_title"]</msg>
+<arg>${Teste técnico}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-02-06T20:51:02.347002" elapsed="1.541743"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-02-06T20:51:06.297098" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.microsoft.todos:id/task_title"]</msg>
+<arg>${Tarefa do dia}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-02-06T20:51:03.888745" elapsed="2.408353"/>
+</kw>
+<status status="PASS" start="2025-02-06T20:51:00.482483" elapsed="5.814615"/>
+</kw>
+<kw name="Edição" owner="Edit_task">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-02-06T20:51:06.300186" level="INFO">Clicking element 'xpath=//android.widget.ImageView[@resource-id="com.microsoft.todos:id/add_step_plus_ic"]'.</msg>
+<msg time="2025-02-06T20:51:07.344025" level="INFO">xpath criteria: //android.widget.ImageView[@resource-id="com.microsoft.todos:id/add_step_plus_ic"]</msg>
+<arg>${Clicar em add etapa}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-02-06T20:51:06.298112" elapsed="1.045913"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-02-06T20:51:07.346021" level="INFO">Clicking element 'xpath=//android.widget.EditText[@resource-id="com.microsoft.todos:id/add_step_title_edit"]'.</msg>
+<msg time="2025-02-06T20:51:07.580978" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="com.microsoft.todos:id/add_step_title_edit"]</msg>
+<arg>${Add etapa}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-02-06T20:51:07.344025" elapsed="0.236953"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-02-06T20:51:07.582949" level="INFO">Typing text 'Edição concluída' into text field 'xpath=//android.widget.EditText[@resource-id="com.microsoft.todos:id/add_step_title_edit"]'</msg>
+<msg time="2025-02-06T20:51:09.049411" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="com.microsoft.todos:id/add_step_title_edit"]</msg>
+<arg>${Add etapa}</arg>
+<arg>Edição concluída</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-02-06T20:51:07.580978" elapsed="1.469419"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-02-06T20:51:09.054397" level="INFO">Clicking element 'xpath=//android.widget.TextView[@resource-id="converted-body"]'.</msg>
+<msg time="2025-02-06T20:51:09.988632" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="converted-body"]</msg>
+<arg>${Abrir campo texto tarefa}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-02-06T20:51:09.050397" elapsed="0.938235"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-02-06T20:51:12.900652" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="ms-outlook-mobile-rooster-writer"]
+xpath criteria: //android.widget.EditText[@resource-id="ms-outlook-mobile-rooster-writer"]</msg>
+<arg>${Campo texto tarefa}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-02-06T20:51:09.989547" elapsed="2.913134"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-02-06T20:51:12.904642" level="INFO">Typing text 'Finalizando edição' into text field 'xpath=//android.widget.EditText[@resource-id="ms-outlook-mobile-rooster-writer"]'</msg>
+<msg time="2025-02-06T20:51:13.394387" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="ms-outlook-mobile-rooster-writer"]</msg>
+<arg>${Campo texto tarefa}</arg>
+<arg>Finalizando edição</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-02-06T20:51:12.903648" elapsed="0.490739"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-02-06T20:51:13.395956" level="INFO">Clicking element 'xpath=//android.widget.ImageButton[@content-desc="Fechar e salvar"]'.</msg>
+<msg time="2025-02-06T20:51:15.094637" level="INFO">xpath criteria: //android.widget.ImageButton[@content-desc="Fechar e salvar"]</msg>
+<arg>${Btn voltar campo texto tarefa}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-02-06T20:51:13.394387" elapsed="1.700250"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-02-06T20:51:15.098157" level="INFO">Clicking element 'xpath=//android.widget.ImageButton[@content-desc="Ignorar modo de exibição de detalhes"]'.</msg>
+<msg time="2025-02-06T20:51:15.399950" level="INFO">xpath criteria: //android.widget.ImageButton[@content-desc="Ignorar modo de exibição de detalhes"]</msg>
+<arg>${Btn voltar tarefa}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-02-06T20:51:15.094637" elapsed="0.305313"/>
+</kw>
+<status status="PASS" start="2025-02-06T20:51:06.298112" elapsed="9.101838"/>
+</kw>
+<kw name="Deletar tarefa" owner="Delete_Task">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-02-06T20:51:16.614406" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.microsoft.todos:id/task_title"]
+xpath criteria: //android.widget.TextView[@resource-id="com.microsoft.todos:id/task_title"]</msg>
+<arg>${Teste técnico}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-02-06T20:51:15.403956" elapsed="1.210450"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-02-06T20:51:16.616917" level="INFO">Clicking element 'xpath=//android.widget.TextView[@resource-id="com.microsoft.todos:id/task_title"]'.</msg>
+<msg time="2025-02-06T20:51:18.508335" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.microsoft.todos:id/task_title"]</msg>
+<arg>${Teste técnico}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-02-06T20:51:16.615912" elapsed="1.892423"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-02-06T20:51:18.511336" level="INFO">Clicking element 'xpath=//android.widget.ImageView[@content-desc="Excluir tarefa"]'.</msg>
+<msg time="2025-02-06T20:51:19.265080" level="INFO">xpath criteria: //android.widget.ImageView[@content-desc="Excluir tarefa"]</msg>
+<arg>${Btn deletar tarefa}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-02-06T20:51:18.509331" elapsed="0.756707"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-02-06T20:51:20.050521" level="INFO">xpath criteria: //android.widget.Button[@resource-id="android:id/button1"]
+xpath criteria: //android.widget.Button[@resource-id="android:id/button1"]</msg>
+<arg>${Tem CTZ exclusão}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-02-06T20:51:19.266038" elapsed="0.784483"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-02-06T20:51:20.054616" level="INFO">Clicking element 'xpath=//android.widget.Button[@resource-id="android:id/button1"]'.</msg>
+<msg time="2025-02-06T20:51:20.271014" level="INFO">xpath criteria: //android.widget.Button[@resource-id="android:id/button1"]</msg>
+<arg>${Tem CTZ exclusão}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-02-06T20:51:20.051532" elapsed="0.219482"/>
+</kw>
+<status status="PASS" start="2025-02-06T20:51:15.400951" elapsed="4.870063"/>
+</kw>
+<status status="PASS" start="2025-02-06T20:50:37.489356" elapsed="42.782647"/>
+</test>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2025-02-06T20:51:20.274004" elapsed="0.315938"/>
+</kw>
+<status status="PASS" start="2025-02-06T20:50:37.303822" elapsed="43.287115"/>
+</suite>
+<status status="PASS" start="2025-02-06T20:50:37.281176" elapsed="43.311767"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="To Do">To Do</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Actions">To Do.Actions</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

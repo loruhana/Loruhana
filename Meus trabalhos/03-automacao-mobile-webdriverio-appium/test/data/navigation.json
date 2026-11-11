@@ -1,0 +1,15 @@
+{
+  "tabBar": [
+    { "tab": "login", "screen": "login", "label": "Login" },
+    { "tab": "forms", "screen": "forms", "label": "Forms" },
+    { "tab": "swipe", "screen": "swipe", "label": "Swipe" },
+    { "tab": "drag", "screen": "drag", "label": "Drag" },
+    { "tab": "home", "screen": "home", "label": "Home" }
+  ],
+  "sideMenu": [
+    { "item": "login", "screen": "login", "label": "Login" },
+    { "item": "forms", "screen": "forms", "label": "Forms" },
+    { "item": "swipe", "screen": "swipe", "label": "Swipe" },
+    { "item": "drag", "screen": "drag", "label": "Drag" }
+  ]
+}

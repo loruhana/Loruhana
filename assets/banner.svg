@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="320" viewBox="0 0 900 320" role="img" aria-label="Loruhana — Lead Quality Assurance Engineer">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B0F1A"/>
+      <stop offset="1" stop-color="#1B0B33"/>
+    </linearGradient>
+    <linearGradient id="txt" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#B26BFF"/>
+      <stop offset=".5" stop-color="#F15BFF"/>
+      <stop offset="1" stop-color="#3DDCFF"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3DDCFF"/>
+      <stop offset="1" stop-color="#B26BFF"/>
+    </linearGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="40"/></filter>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" fill="none" stroke="#ffffff" stroke-opacity=".04"/>
+    </pattern>
+    <clipPath id="clip"><rect width="900" height="320" rx="18"/></clipPath>
+    <style>
+      .sans{font-family:'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif}
+      .mono{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
+      .float1{animation:f 7s ease-in-out infinite}
+      .float2{animation:f 9s ease-in-out infinite reverse}
+      @keyframes f{0%,100%{transform:translate(0,0)}50%{transform:translate(25px,-15px)}}
+      .fade{opacity:0;animation:in .8s ease-out forwards}
+      .d1{animation-delay:.1s}.d2{animation-delay:.35s}.d3{animation-delay:.6s}.d4{animation-delay:.85s}.d5{animation-delay:1.1s}
+      @keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+      .check{stroke-dasharray:90;stroke-dashoffset:90;animation:draw 1.2s 1s ease-out forwards}
+      @keyframes draw{to{stroke-dashoffset:0}}
+      .pulse{animation:p 2.4s ease-in-out infinite;transform-origin:735px 160px}
+      @keyframes p{0%,100%{opacity:.35;transform:scale(1)}50%{opacity:.8;transform:scale(1.06)}}
+      .dot{animation:blink 1.6s infinite}
+      @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+    </style>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="900" height="320" fill="url(#bg)"/>
+    <rect width="900" height="320" fill="url(#grid)"/>
+    <circle class="float1" cx="120" cy="40" r="120" fill="#7F00FF" opacity=".45" filter="url(#blur)"/>
+    <circle class="float2" cx="820" cy="300" r="130" fill="#00B8E6" opacity=".35" filter="url(#blur)"/>
+    <circle class="float1" cx="560" cy="-20" r="90" fill="#E100FF" opacity=".25" filter="url(#blur)"/>
+
+    <!-- status pill -->
+    <g class="fade d1">
+      <rect x="48" y="44" width="246" height="30" rx="15" fill="#ffffff" fill-opacity=".06" stroke="#ffffff" stroke-opacity=".12"/>
+      <circle class="dot" cx="66" cy="59" r="5" fill="#2EE59D"/>
+      <text x="80" y="64" class="mono" font-size="13" fill="#C9D1D9">all quality gates passing</text>
+    </g>
+
+    <text x="48" y="128" class="sans fade d2" font-size="54" font-weight="800" fill="#FFFFFF" letter-spacing="-1">Loruhana</text>
+    <text x="48" y="170" class="sans fade d3" font-size="27" font-weight="700" fill="url(#txt)">Lead Quality Assurance Engineer</text>
+    <text x="48" y="204" class="sans fade d4" font-size="16" fill="#9DA7B3">Automação · Estratégia de testes · Métricas que viram decisões</text>
+
+    <g class="fade d5 sans" font-size="13" font-weight="600">
+      <rect x="48" y="232" width="118" height="32" rx="8" fill="#B26BFF" fill-opacity=".15" stroke="#B26BFF" stroke-opacity=".5"/>
+      <text x="107" y="253" text-anchor="middle" fill="#E3CCFF">7+ anos em QA</text>
+      <rect x="176" y="232" width="128" height="32" rx="8" fill="#F15BFF" fill-opacity=".13" stroke="#F15BFF" stroke-opacity=".5"/>
+      <text x="240" y="253" text-anchor="middle" fill="#FBD0FF">Liderança técnica</text>
+      <rect x="314" y="232" width="148" height="32" rx="8" fill="#3DDCFF" fill-opacity=".12" stroke="#3DDCFF" stroke-opacity=".5"/>
+      <text x="388" y="253" text-anchor="middle" fill="#C5F4FF">Playwright · Cypress</text>
+      <rect x="472" y="232" width="112" height="32" rx="8" fill="#2EE59D" fill-opacity=".12" stroke="#2EE59D" stroke-opacity=".5"/>
+      <text x="528" y="253" text-anchor="middle" fill="#C8F9E3">QA + IA</text>
+    </g>
+
+    <!-- quality shield -->
+    <g>
+      <circle class="pulse" cx="735" cy="160" r="98" fill="none" stroke="url(#ring)" stroke-width="2"/>
+      <circle cx="735" cy="160" r="78" fill="#ffffff" fill-opacity=".04" stroke="#ffffff" stroke-opacity=".1"/>
+      <path d="M735 102 L782 120 V160 C782 190 762 212 735 222 C708 212 688 190 688 160 V120 Z" fill="url(#ring)" fill-opacity=".18" stroke="url(#ring)" stroke-width="3" stroke-linejoin="round"/>
+      <path class="check" d="M712 160 L729 177 L760 144" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="735" y="283" text-anchor="middle" class="mono" font-size="12" fill="#9DA7B3" letter-spacing="2">QUALITY · BY · DESIGN</text>
+    </g>
+  </g>
+  <rect x=".5" y=".5" width="899" height="319" rx="18" fill="none" stroke="#ffffff" stroke-opacity=".08"/>
+</svg>

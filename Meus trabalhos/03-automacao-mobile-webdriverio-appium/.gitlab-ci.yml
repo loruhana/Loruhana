@@ -1,0 +1,105 @@
+# Pipeline GitLab CI/CD - executa a suíte mobile a cada commit e a cada merge request.
+#
+# Jobs de teste:
+#   - android:emulator     -> emulador Android headless. Exige runner Linux com KVM
+#                             (tag "kvm") e a variável ANDROID_KVM_RUNNER="true";
+#                             veja a seção CI/CD do README.
+#   - android:browserstack -> dispositivo real no BrowserStack. Roda quando as
+#                             variáveis BROWSERSTACK_USERNAME/ACCESS_KEY existem.
+# O relatório Allure é publicado como artefato em ambos os casos.
+
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS
+      when: never
+    - if: $CI_COMMIT_BRANCH
+
+stages:
+  - validate
+  - test
+  - report
+
+variables:
+  NODE_IMAGE: node:20-bookworm
+  APP_RELEASE: v2.2.0
+  APP_APK_URL: https://github.com/webdriverio/native-demo-app/releases/download/${APP_RELEASE}/android.wdio.native.app.${APP_RELEASE}.apk
+  npm_config_cache: $CI_PROJECT_DIR/.npm
+
+default:
+  image: $NODE_IMAGE
+  cache:
+    key:
+      files: [package-lock.json]
+    paths: [.npm/]
+
+.install: &install
+  - npm ci --no-audit --no-fund
+
+validate:
+  stage: validate
+  script:
+    - *install
+    - npm run lint
+
+android:emulator:
+  stage: test
+  tags: [kvm]
+  timeout: 45m
+  rules:
+    - if: $ANDROID_KVM_RUNNER == "true"
+  variables:
+    ANDROID_HOME: /opt/android-sdk
+    ANDROID_API_LEVEL: '34'
+  script:
+    - *install
+    - mkdir -p apps && curl -fsSL -o apps/android.wdio.native.app.apk "$APP_APK_URL"
+    - bash ci/setup-android-emulator.sh
+    - export PATH="$ANDROID_HOME/platform-tools:$PATH"
+    - npm run test:android
+  artifacts:
+    when: always
+    expire_in: 15 days
+    paths: [reports/]
+
+android:browserstack:
+  stage: test
+  timeout: 45m
+  rules:
+    - if: $BROWSERSTACK_USERNAME && $BROWSERSTACK_ACCESS_KEY
+  variables:
+    BROWSERSTACK_BUILD_NAME: gitlab-$CI_PIPELINE_ID
+  script:
+    - *install
+    - mkdir -p apps && curl -fsSL -o apps/android.wdio.native.app.apk "$APP_APK_URL"
+    - |
+      export BROWSERSTACK_APP_ID=$(curl -fsS -u "$BROWSERSTACK_USERNAME:$BROWSERSTACK_ACCESS_KEY" \
+        -X POST https://api-cloud.browserstack.com/app-automate/upload \
+        -F file=@apps/android.wdio.native.app.apk | node -pe 'JSON.parse(require("fs").readFileSync(0)).app_url')
+    - echo "App enviado ao BrowserStack: $BROWSERSTACK_APP_ID"
+    - npm run test:browserstack
+  artifacts:
+    when: always
+    expire_in: 15 days
+    paths: [reports/]
+
+allure-report:
+  stage: report
+  when: always
+  needs:
+    - job: android:emulator
+      optional: true
+      artifacts: true
+    - job: android:browserstack
+      optional: true
+      artifacts: true
+  before_script:
+    - apt-get update -qq && apt-get install -y -qq openjdk-17-jre-headless > /dev/null
+  script:
+    - *install
+    - npm run report:generate
+  artifacts:
+    when: always
+    expire_in: 30 days
+    expose_as: Allure Report
+    paths: [reports/allure-report/]

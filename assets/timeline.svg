@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="210" viewBox="0 0 900 210" role="img" aria-label="Trajetória profissional de 2019 a 2026">
+<defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#B26BFF"/><stop offset=".5" stop-color="#F15BFF"/><stop offset="1" stop-color="#3DDCFF"/></linearGradient>
+<style>.s{font-family:'Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif}
+.line{stroke-dasharray:760;stroke-dashoffset:760;animation:d 2.4s ease-out forwards}@keyframes d{to{stroke-dashoffset:0}}
+.n{opacity:0;animation:in .5s ease-out forwards}@keyframes in{to{opacity:1}}
+.now{animation:p 1.8s ease-in-out infinite;transform-box:fill-box;transform-origin:center}@keyframes p{0%,100%{opacity:.25;transform:scale(1)}50%{opacity:.7;transform:scale(1.5)}}
+</style></defs>
+<rect width="900" height="210" rx="14" fill="#0D1117"/><rect x=".5" y=".5" width="899" height="209" rx="14" fill="none" stroke="#30363D"/>
+<line x1="75" y1="92" x2="825" y2="92" stroke="#21262D" stroke-width="4" stroke-linecap="round"/>
+<line class="line" x1="75" y1="92" x2="825" y2="92" stroke="url(#g)" stroke-width="4" stroke-linecap="round"/>
+<g class="n" style="animation-delay:0.20s">
+<text x="75" y="60" text-anchor="middle" class="s" font-size="15" font-weight="700" fill="#8B949E">2019</text>
+<circle cx="75" cy="92" r="7" fill="#0D1117" stroke="#B26BFF" stroke-width="3"/>
+<text x="75" y="132" text-anchor="middle" class="s" font-size="14" font-weight="700" fill="#E6EDF3">QA Engineer</text>
+<text x="75" y="154" text-anchor="middle" class="s" font-size="13" fill="#8B949E">ZAMP</text>
+</g>
+<g class="n" style="animation-delay:0.58s">
+<text x="225" y="60" text-anchor="middle" class="s" font-size="15" font-weight="700" fill="#8B949E">2020</text>
+<circle cx="225" cy="92" r="7" fill="#0D1117" stroke="#B26BFF" stroke-width="3"/>
+<text x="225" y="132" text-anchor="middle" class="s" font-size="14" font-weight="700" fill="#E6EDF3">Quality Engineer</text>
+<text x="225" y="154" text-anchor="middle" class="s" font-size="13" fill="#8B949E">Atlas</text>
+</g>
+<g class="n" style="animation-delay:0.96s">
+<text x="375" y="60" text-anchor="middle" class="s" font-size="15" font-weight="700" fill="#8B949E">2021</text>
+<circle cx="375" cy="92" r="7" fill="#0D1117" stroke="#B26BFF" stroke-width="3"/>
+<text x="375" y="132" text-anchor="middle" class="s" font-size="14" font-weight="700" fill="#E6EDF3">Engenheira QA</text>
+<text x="375" y="154" text-anchor="middle" class="s" font-size="13" fill="#8B949E">C6 Bank</text>
+</g>
+<g class="n" style="animation-delay:1.34s">
+<text x="525" y="60" text-anchor="middle" class="s" font-size="15" font-weight="700" fill="#8B949E">2024</text>
+<circle cx="525" cy="92" r="7" fill="#0D1117" stroke="#B26BFF" stroke-width="3"/>
+<text x="525" y="132" text-anchor="middle" class="s" font-size="14" font-weight="700" fill="#E6EDF3">QA Manager</text>
+<text x="525" y="154" text-anchor="middle" class="s" font-size="13" fill="#8B949E">CSP Tech</text>
+</g>
+<g class="n" style="animation-delay:1.72s">
+<text x="675" y="60" text-anchor="middle" class="s" font-size="15" font-weight="700" fill="#8B949E">2025</text>
+<circle cx="675" cy="92" r="7" fill="#0D1117" stroke="#B26BFF" stroke-width="3"/>
+<text x="675" y="132" text-anchor="middle" class="s" font-size="14" font-weight="700" fill="#E6EDF3">QA Release Manager</text>
+<text x="675" y="154" text-anchor="middle" class="s" font-size="13" fill="#8B949E">Winnin</text>
+</g>
+<g class="n" style="animation-delay:2.10s">
+<text x="825" y="60" text-anchor="middle" class="s" font-size="15" font-weight="700" fill="#F15BFF">2026 → hoje</text>
+<circle class="now" cx="825" cy="92" r="14" fill="#F15BFF"/>
+<circle cx="825" cy="92" r="9" fill="#F15BFF" stroke="#FFFFFF" stroke-width="3"/>
+<text x="825" y="132" text-anchor="middle" class="s" font-size="14" font-weight="700" fill="#E6EDF3">Lead QA Engineer</text>
+<text x="825" y="154" text-anchor="middle" class="s" font-size="13" fill="#3DDCFF">SPDATA</text>
+</g>
+</svg>

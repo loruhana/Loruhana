@@ -1,0 +1,24 @@
+import js from '@eslint/js';
+import globals from 'globals';
+
+export default [
+  { ignores: ['node_modules/', 'reports/', 'apps/'] },
+  js.configs.recommended,
+  {
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: {
+        ...globals.node,
+        ...globals.mocha,
+        driver: 'readonly',
+        browser: 'readonly',
+        $: 'readonly',
+        $$: 'readonly',
+      },
+    },
+    rules: {
+      'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    },
+  },
+];

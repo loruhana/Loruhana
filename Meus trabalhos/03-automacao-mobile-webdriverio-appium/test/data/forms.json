@@ -1,0 +1,16 @@
+{
+  "textInputs": [
+    { "case": "frase com acentuação", "value": "Validação de formulário" },
+    { "case": "alfanumérico com símbolos", "value": "Pedido #4821 - R$ 99,90" },
+    { "case": "um único caractere", "value": "Z" }
+  ],
+  "dropdownOptions": ["webdriver.io is awesome", "Appium is awesome", "This app is awesome"],
+  "switch": {
+    "offText": "Click to turn the switch ON",
+    "onText": "Click to turn the switch OFF"
+  },
+  "activeButtonAlert": {
+    "title": "This button is",
+    "message": "This button is active"
+  }
+}
